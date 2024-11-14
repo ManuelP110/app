@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>clienteDetalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="cliente as clientes">
+    <div class="center">
+      <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Foto">
+    </div>
+    <ion-card-header class="center">
+      <ion-card-title>
+        <h3>{{ cliente.nombre }} </h3>
+        {{ cliente.apellido }}
+        {{ cliente.telefono }}
+        {{ cliente.direccion }}
+        {{ cliente.email }}
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

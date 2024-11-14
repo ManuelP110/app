@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>pagoListado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+  <ion-item button *ngFor="let pago of pagos">
+  <ion-avatar slot="start">
+      <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Foto">
+  </ion-avatar>
+
+  <ion-label class="ion-text-wrap">
+      <h3>{{pago.idpago}}</h3>
+      {{pago.fecha_de_pago}}
+      {{pago.cantidad}}
+      {{pago.idcliente}} 
+  </ion-label>
+  <ion-button [routerLink]="['/pago-detalle', pago.idpago]">
+    <ion-icon name="person-circle"></ion-icon>
+  </ion-button>
+  </ion-item>
+</ion-list>
+</ion-content>

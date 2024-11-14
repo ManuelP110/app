@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>generoListado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item button *ngFor="let genero of generos">
+    <ion-avatar slot="start">
+        <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Foto">
+    </ion-avatar>
+
+    <ion-label class="ion-text-wrap">
+        <h3>{{genero.nombre}}</h3>
+    </ion-label>
+
+    <ion-fab slot="fixed" vertical="bottom" horizontal="center">
+      <ion-fab-button (click)="new()">
+      <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+  <ion-button (click)="editar(generos)" color="warning"><ion-icon name="pencil"></ion-icon></ion-button>
+
+    <ion-button [routerLink]="['/genero-detalle', genero.idgenero]">
+      <ion-icon name="person-circle"></ion-icon>
+    </ion-button>
+    </ion-item>
+
+
+</ion-list>
+</ion-content>

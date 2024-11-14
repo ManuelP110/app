@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>clienteListado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item button *ngFor="let cliente of clientes">
+    <ion-avatar slot="start">
+        <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Foto">
+    </ion-avatar>
+
+    <ion-label class="ion-text-wrap">
+        <h3>{{cliente.nombre}}</h3>
+        {{cliente.apellido}}
+        
+    </ion-label>
+    <ion-button [routerLink]="['/cliente-detalle', cliente.idcliente]">
+      <ion-icon name="person-circle"></ion-icon>
+    </ion-button>
+    </ion-item>
+</ion-list>
+</ion-content>

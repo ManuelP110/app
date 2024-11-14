@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>companiaListado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item button *ngFor="let compania of companias">
+    <ion-avatar slot="start">
+        <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Foto">
+    </ion-avatar>
+
+    <ion-label class="ion-text-wrap">
+        <h3>{{compania.nombre}}</h3>
+        {{compania.pais}}
+    </ion-label>
+    <ion-button [routerLink]="['/compania-detalle', compania.idcompania]">
+      <ion-icon name="person-circle"></ion-icon>
+    </ion-button>
+    </ion-item>
+</ion-list>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>inventarioListado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item button *ngFor="let inventario of inventarios">
+    <ion-avatar slot="start">
+        <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Foto">
+    </ion-avatar>
+
+    <ion-label class="ion-text-wrap">
+        <h3>{{inventario.idjuego}}</h3>
+        {{inventario.cantidad}}
+        {{inventario.fecha_entregada}}
+    </ion-label>
+    <ion-button [routerLink]="['/inventario-detalle', inventario.idinventario]">
+      <ion-icon name="person-circle"></ion-icon>
+    </ion-button>
+    </ion-item>
+</ion-list>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>pagoDetalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="pago as pagos">
+    <div class="center">
+      <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Foto">
+    </div>
+    <ion-card-header class="center">
+      <ion-card-title>
+        <h3>{{ pago.fecha_de_pago}} </h3>
+        {{ pago.cantidad}} 
+        {{ pago.idcliente}} 
+      </ion-card-title>
+    </ion-card-header>
+    
+  </ion-card>
+</ion-content>
